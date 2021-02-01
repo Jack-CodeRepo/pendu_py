@@ -83,20 +83,24 @@ with open(save_file, 'r') as f:
 # ==================================================================================================
 
 def write_json():
-
+    """
+    Ecris les données dans le fichier .json de sauvegarde.
+    Il n'est nécessaire de spécifier le fichier en argument car un seul fichier est utilisé.
+    """
     with open(save_file, "w") as f:
         json.dump(data_players, f, indent=4)
 
 
 
 def get_score(playerName):
-    """[summary]
+    """
+    Récupère le score du joueur
 
     Args:
-        playerName ([type]): [description]
+        playerName (string): nom du joueur ciblé
 
     Returns:
-        [type]: [description]
+        int: score du joueur ciblé
     """
     score = data_players["players"][playerName]
     return score
@@ -104,6 +108,12 @@ def get_score(playerName):
 
 
 def add_player(playerName):
+    """
+    Ajoute le joueur
+
+    Args:
+        playerName (string): nom du joueur à ajouter
+    """
     score = "10"
     added_data = {playerName: score}
     temp = data_players["players"]
@@ -114,6 +124,12 @@ def add_player(playerName):
 
 
 def delete_player(playerName):
+    """
+    Supprime le joueur
+
+    Args:
+        playerName (string): nom du joueur à supprimer
+    """
     pName = playerName.lower()
     if pName in data_players["players"]:
         del data_players["players"][pName]
@@ -123,6 +139,14 @@ def delete_player(playerName):
 
 
 def check_player(playerName):
+    """
+    Vérifie si le joueur existe dans le .json de sauvegarde
+    Si le joueur n'existe pas, rajoute le joueur dans le .json de sauvegarde
+    Initialise certains attributs de l'objet "joueur"
+
+    Args:
+        playerName (string): nom du joueur
+    """
     if playerName in data_players["players"]:
         joueur.set_name(playerName)
         joueur.set_score(get_score(playerName))
@@ -134,6 +158,13 @@ def check_player(playerName):
 
 
 def update_score(playerName, score):
+    """
+    met à jour le score du joueur dans le fichier .json de sauvegarde
+
+    Args:
+        playerName (string): nom du joueur
+        score (int): score du joueur
+    """
     if playerName in data_players["players"]:
         data_players["players"][playerName] = score
 
@@ -142,6 +173,13 @@ def update_score(playerName, score):
 
 
 def check_lettre():
+    """
+    Vérifie la lettre
+    Si un des caractère dans le mot à deviner est "-", alors il est ajouté
+
+    Returns:
+        string: le mot caché mis à jour si la lettre est trouvée
+    """
     l = lettre.get_name()
     m = mot_visible.get_name()
     mc = mot_cache.get_name()
@@ -157,7 +195,7 @@ def check_lettre():
             mc_list.append(l)
         elif mc[i].isalpha():
             mc_list.append(mc[i])
-        elif mc[i] == "-":
+        elif m[i] == "-":
             mc_list.append("-")
         else:
             mc_list.append("_")
@@ -178,15 +216,26 @@ def check_lettre():
 
 
 def check_score(playerName):
+    """
+    Vérifie le score et renvois une string contenant un message
+
+    Args:
+        playerName (string): nom du joueur avec lequel vérifier le score
+
+    Returns:
+        string: une string contenant un message approprié
+    """
     string_output = ""
     tentative = mot_visible.get_tentative()
 
+    # si toutes les lettres sont trouvees
     if "_" not in mot_cache.get_name():
         joueur.increase_score(5)
         update_score(playerName, joueur.get_score())
         string_output = f"Félicitations! Vous avez gagné! Votre score est de {joueur.get_score()}"
 
     else:
+        # si il n'y a plus de tentative
         if tentative == 0:
             joueur.lower_score(2)
             update_score(playerName, joueur.get_score())
@@ -195,23 +244,23 @@ def check_score(playerName):
         else:
             string_output = f"Il vous reste {tentative} tentative."
 
+    # si le score total du joueur est à zéro
     if joueur.get_score() == 0:
         delete_player(playerName)
         string_output = f"Vous avez {joueur.get_score()} en score. \n Votre sauvegarde a été supprimée."
-
 
     return string_output
 
 
 
 def hide_word(word):
-    """
-        remplace chaque charactere d'une sting par "_ "
+    """remplace chaque charactere d'une string par "_ "
 
-        :param word: string à transformer
-        :type word: str
-        :return: string transformée
-        :rtype: str
+    Args:
+        word (string): string à transformer
+
+    Returns:
+        string: string transformée
     """
     mot = []
     mot_long = len(word)
@@ -222,13 +271,13 @@ def hide_word(word):
 
 
 def pick_random_word(list_word):
-    """
-        choisi un mot aléatoire à partir d'une liste de string, et le renvois
+    """choisi un mot aléatoire à partir d'une liste de string, et le renvois
 
-        :param list_word: liste de mot
-        :type list_word: list
-        :return: list de mot
-        :rtype: string
+    Args:
+        list_word (liste): liste dans laquelle choisir
+
+    Returns:
+        string: mot choisi parmis la liste
     """
 
     word = random.choice(list_word)
@@ -237,13 +286,11 @@ def pick_random_word(list_word):
 
 
 def affichage(objet, liste):
-    """
-        affiche les éléments
+    """affiche les éléments dans la GUI
 
-        :param  objet: objet gérant l'endroit où afficher (l'objet doit etre créé avec la classe display)
-        :type   objet: tkinter.Text
-        :param  liste: liste des éléments à afficher
-        :type   liste: list || autres
+    Args:
+        objet (tkinter.Text):   objet gérant l'endroit où afficher (l'objet doit etre créé avec la classe display)
+        liste (list,string):    string ou liste des éléments à afficher
     """
 
     if type(liste) is list:
