@@ -1,7 +1,23 @@
 #!/usr/bin/env python
 # coding: utf-8
 # ==================================================================================================
+"""
+    Jeu du pendu
 
+    Usage:
+        pendu_main.py <play>
+        pendu_main.py (-h | --help)
+        pendu_main.py (-v | --version)
+
+    Argument
+        <play>:         Renseigner "play" afin de jouer.
+
+
+    Options:
+        -h --help       Affiche cet écran.
+        -v --version    Afficher la version.
+
+"""
 
 # ==================================================================================================
 #   IMPORT
@@ -13,6 +29,7 @@ import tkinter as tk
 # import module standard python
 import random
 import json
+import docopt
 
 # import liste
 from lists import words
@@ -66,12 +83,21 @@ with open(save_file, 'r') as f:
 # ==================================================================================================
 
 def write_json():
+
     with open(save_file, "w") as f:
         json.dump(data_players, f, indent=4)
 
 
 
 def get_score(playerName):
+    """[summary]
+
+    Args:
+        playerName ([type]): [description]
+
+    Returns:
+        [type]: [description]
+    """
     score = data_players["players"][playerName]
     return score
 
@@ -288,10 +314,16 @@ class interface_main(tk.Frame):
 # ==================================================================================================
 #   SCRIPT
 # ==================================================================================================
-root = tk.Tk()
-menu = menu_bar.class_menu_bar()
-root.title("Jeu du pendu")
-root.config(menu=menu)
-root.geometry("600x200")
-interface_main(root)
-root.mainloop()
+argument = docopt.docopt(__doc__, version="achetezlejeu")
+play = argument.get("<play>")
+
+if play == "play":
+    root = tk.Tk()
+    menu = menu_bar.class_menu_bar()
+    root.title("Jeu du pendu")
+    root.config(menu=menu)
+    root.geometry("600x200")
+    interface_main(root)
+    root.mainloop()
+else:
+    print("Lancez la commande \"python pendu.py play\" afin de jouer.")
