@@ -242,7 +242,7 @@ def check_score(playerName):
             string_output = f"Il vous reste {tentative} tentative, vous avez perdu."
 
         else:
-            string_output = f"Il vous reste {tentative} tentative."
+            string_output = f"Il vous reste {tentative} tentatives."
 
     # si le score total du joueur est à zéro
     if joueur.get_score() == 0:
@@ -314,12 +314,18 @@ def affichage(objet, liste):
 
 class interface_main(tk.Frame):
     def __init__(self, parent):
+        """
+        Gui principale
+
+        Args:
+            parent (tkinter): fenetre principale dans laquelle contenir la GUI
+        """
         tk.Frame.__init__(self)
         self.parent = parent
 
-        self.main_display = display.display(parent, 0, 0, 30, 10, 20).get_text()
-        self.select_player_input = saisie.saisie(parent, 0, 1, 20, 10, "nom du joueur")
-        self.pendu_play_button = bouton.bouton(parent, 1, 1, "jouer", self.pendu_game)
+        self.main_display = display.display(self.parent, 0, 0, 20, 8, 10).get_text()
+        self.select_player_input = saisie.saisie(self.parent, 0, 1, 20, 10, "nom du joueur")
+        self.pendu_play_button = bouton.bouton(self.parent, 1, 1, "jouer", self.pendu_game)
 
 
     def pendu_game(self):
@@ -327,14 +333,14 @@ class interface_main(tk.Frame):
         mot_visible.set_name(mot)
         mot_visible.set_tentative(9)
         mot_cache.set_name("")
-
+        self.hide_word()
         playerName = str(self.select_player_input.get_value()).lower()
 
         check_player(playerName)
 
         self.lettre_button = bouton.bouton(self.parent, 2, 1, "valider lettre", self.valider_lettre)
         self.lettre_input = saisie.saisie(self.parent, 2, 2, 2, 1, "lettre")
-        self.hide_word()
+
 
 
     def valider_lettre(self):

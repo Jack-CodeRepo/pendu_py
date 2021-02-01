@@ -42,12 +42,13 @@ class saisie(tk.Entry):
         self.label = label
 
         # création zone de saisie (entry)
-        self.saisie = tk.Entry(parent, width=self.width)
+        self.saisie = tk.Entry(parent, width=self.width, bg="white")
         self.saisie.grid(row=self.xRow, column=self.yCol+1, columnspan=self.cSpan, sticky="nsew")
 
         # création du nom de la zone de saisie (label)
         self.saisie_label = tk.Label(parent, text=self.label)
         self.saisie_label.grid(row=self.xRow, column=self.yCol, sticky="nsew")
+
 
 
     def get_value(self):
@@ -60,8 +61,12 @@ class saisie(tk.Entry):
         else:
             return self.saisie.get()
 
+
+
     def forget_saisie(self):
         self.saisie.grid_forget()
+
+
 
     def forget_saisie_label(self):
         self.saisie_label.grid_forget()
