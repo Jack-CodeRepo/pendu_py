@@ -3,9 +3,11 @@
 # ==================================================================================================
 
 
+
 # ==================================================================================================
 #   IMPORT
 # ==================================================================================================
+
 
 
 # ==================================================================================================
@@ -13,29 +15,31 @@
 # ==================================================================================================
 
 
-# ==================================================================================================
-#   DICT
-# ==================================================================================================
-
 
 # ==================================================================================================
 #   LISTS
 # ==================================================================================================
 
-NOMS = ["Francois Couperin","Marin Marais","Mozart",
-            "Palestrina","Beethoven","Camille Saint-Saens",
-            "Maurice Ravel","Claude Debussy","Rameau",
-            "Mahler","Leo Bouwer","Anthony Sylvestre",
-            "Tchaikovsky","Chostakovitch","Modest Mussorgsky",
-            "Bach","Corelli","Vivaldi","Pergolesi","Josquin des Pres",
-            "Scarlatti","Purcell","Haendel","Gabriel Faure","Yann Tiersen",
-            "Bruno Coulais","Sylvain Rifflet","Franz Schubert","Arvo Part",
-            "Charpentier","Poulenc","Guy Ropartz","Erik Satie","Lully",
-            "Robert de Visee","Jannequin","Alexandre Agricola","Allegri","Monteverdi",
-            "William Byrd","Michael Praetorius","Albinoni","Bocherini","Schumann",
-            "Wagner","Smetana","Wojciech Kilar","Brahms","Richard Strauss","Dvorak",
-            "Edward Grieg","Edward Elgar","Sibelius","Prokofiev","Aaron Copland",
-            "Samuel Barber","Benjamin Britten"
+NOMS = ["Francois Couperin","Marin Marais","Wolfgang Amadeus Mozart",
+            "Giovanni Pierluigi da Palestrina","Ludwig van Beethoven","Camille Saint-Saens",
+            "Maurice Ravel","Claude Debussy","Jean-Philippe Rameau",
+            "Gustav Mahler","Leo Bouwer","Anthony Sylvestre",
+            "Piotr Ilitch Tchaikovsky","Dmitri Chostakovitch","Modest Mussorgsky",
+            "Jean-Sebastien Bach","Arcangelo Corelli","Antonio Vivaldi",
+            "Giovanni Battista Pergolesi","Josquin des Pres","Domenico Scarlatti",
+            "Henry Purcell","Georg Friedrich Haendel","Gabriel Faure",
+            "Yann Tiersen","Bruno Coulais","Sylvain Rifflet",
+            "Franz Schubert","Arvo Part","Marc-Antoine Charpentier",
+            "Francis Poulenc","Guy Ropartz","Erik Satie",
+            "Jean-Baptiste Lully","Robert de Visee","Clément Jannequin",
+            "Alexandre Agricola","Gregorio Allegri","Claudio Monteverdi",
+            "William Byrd","Michael Praetorius","Tomasi Albinoni",
+            "Luigi Bocherini","Robert Schumann","Richard Wagner",
+            "Bedrich Smetana","Wojciech Kilar","Johannes Brahms",
+            "Richard Strauss","Antonin Dvorak","Edward Grieg",
+            "Edward Elgar","Jean Sibelius","Serguei Prokofiev",
+            "Aaron Copland","Samuel Barber","Benjamin Britten",
+            "Philip Glass","John Dowland"
 ]
 
 
@@ -152,20 +156,3 @@ MH3U = ["Agnaktor","Agnaktor-Glacial","Alatreon",
             "Zinogre","Zinogre-Stygien"
 ]
 
-
-
-# ==================================================================================================
-#   FONCTIONS
-# ==================================================================================================
-
-
-
-# ==================================================================================================
-#   CLASSES
-# ==================================================================================================
-
-
-
-# ==================================================================================================
-#   SCRIPT
-# ==================================================================================================
