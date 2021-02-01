@@ -12,7 +12,6 @@ import tkinter as tk
 
 # import module standard python
 import random
-import time
 import json
 
 # import liste
