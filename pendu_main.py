@@ -54,7 +54,7 @@ import classes.interface.display    as display
 # fichier de sauvegarde
 save_file = "misc/players.json"
 # attribution de la liste des mots à deviner en variable
-words_list = words.MHWI
+words_list = words.NOMS
 
 
 
@@ -183,7 +183,6 @@ def check_lettre():
     l = lettre.get_name()
     m = mot_visible.get_name()
     mc = mot_cache.get_name()
-
     mc_list = []
     mc_display_list = []
 
@@ -191,12 +190,14 @@ def check_lettre():
         mc = hide_word(m)
 
     for i in range(len(m)):
-        if l == m[i]:
+        if l.lower() == m[i].lower():
             mc_list.append(l)
         elif mc[i].isalpha():
             mc_list.append(mc[i])
         elif m[i] == "-":
             mc_list.append("-")
+        elif m[i] == " ":
+            mc_list.append(" ")
         else:
             mc_list.append("_")
 
@@ -345,7 +346,6 @@ class interface_main(tk.Frame):
 
     def valider_lettre(self):
         l = self.lettre_input.get_value()
-        l = str(l).upper()
         lettre.set_name(l)
 
         str_checked = check_lettre()

@@ -22,6 +22,17 @@
 #   LISTS
 # ==================================================================================================
 
+NOMS = ["Francois Couperin","Marin Marais","Mozart",
+                    "Palestrina","Beethoven","Camille Saint-Saens",
+                    "Maurice Ravel","Claude Debussy","Rameau",
+                    "Mahler","Leo Bouwer","Anthony Sylvestre",
+                    "Tchaikovsky","Chostakovitch","Modest Moussorgsky",
+                    "Bach","Corelli","Vivaldi","Pergolese","Josquin des Pres",
+                    "Scarlatti","Purcell","Haendel","Gabriel Faure"
+]
+
+
+
 MHWI = ["Alatreon","Anjanath","Anjanath-Tonnerre",
             "Banbaro","Barioth","Barioth-Crocgivre",
             "Barroth","Bazelgeuse","Bazelgeuse-Vulcan",
