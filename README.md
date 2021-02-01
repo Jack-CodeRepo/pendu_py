@@ -5,3 +5,6 @@ Les mots sont issus du jeu "Monster Hunter World" et de son extension "Monster H
 
 Pour les accents, "é" sera "e" (idem pour tous les accents sur toutes les voyelles)
 Pour les espaces, " " sera "-"
+
+La liste uilisée par le jeu (MHWI) est dans le dossier "lists", fichier words.py
+
