@@ -23,12 +23,19 @@
 # ==================================================================================================
 
 NOMS = ["Francois Couperin","Marin Marais","Mozart",
-                    "Palestrina","Beethoven","Camille Saint-Saens",
-                    "Maurice Ravel","Claude Debussy","Rameau",
-                    "Mahler","Leo Bouwer","Anthony Sylvestre",
-                    "Tchaikovsky","Chostakovitch","Modest Moussorgsky",
-                    "Bach","Corelli","Vivaldi","Pergolese","Josquin des Pres",
-                    "Scarlatti","Purcell","Haendel","Gabriel Faure"
+            "Palestrina","Beethoven","Camille Saint-Saens",
+            "Maurice Ravel","Claude Debussy","Rameau",
+            "Mahler","Leo Bouwer","Anthony Sylvestre",
+            "Tchaikovsky","Chostakovitch","Modest Mussorgsky",
+            "Bach","Corelli","Vivaldi","Pergolesi","Josquin des Pres",
+            "Scarlatti","Purcell","Haendel","Gabriel Faure","Yann Tiersen",
+            "Bruno Coulais","Sylvain Rifflet","Franz Schubert","Arvo Part",
+            "Charpentier","Poulenc","Guy Ropartz","Erik Satie","Lully",
+            "Robert de Visee","Jannequin","Alexandre Agricola","Allegri","Monteverdi",
+            "William Byrd","Michael Praetorius","Albinoni","Bocherini","Schumann",
+            "Wagner","Smetana","Wojciech Kilar","Brahms","Richard Strauss","Dvorak",
+            "Edward Grieg","Edward Elgar","Sibelius","Prokofiev","Aaron Copland",
+            "Samuel Barber","Benjamin Britten"
 ]
 
 
